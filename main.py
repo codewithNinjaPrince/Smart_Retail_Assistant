@@ -1,3 +1,12 @@
+try:
+    import sys
+
+    import pysqlite3
+
+    sys.modules["sqlite3"] = pysqlite3
+except ImportError:
+    pass
+
 from fastapi import FastAPI
 from api.anomaly_api import router as anomaly_router
 from api.demand_api import router as demand_router
