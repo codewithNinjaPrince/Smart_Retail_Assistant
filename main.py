@@ -1,3 +1,6 @@
+__import__("pysqlite3")
+import sys
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 from fastapi import FastAPI
 from api.anomaly_api import router as anomaly_router
 from api.demand_api import router as demand_router
@@ -5,6 +8,7 @@ from api.rag_api import router as rag_router
 from api.document_routes import router as document_router
 from api.sentiment_routes import router as sentiment_router
 from api.crew_routes import router as crew_router
+
 
 app=FastAPI(
     title="Retail Multi-Agent System"
