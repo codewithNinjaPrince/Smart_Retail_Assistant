@@ -1,6 +1,3 @@
-__import__("pysqlite3")
-import sys
-sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 from fastapi import FastAPI
 from api.anomaly_api import router as anomaly_router
 from api.demand_api import router as demand_router
